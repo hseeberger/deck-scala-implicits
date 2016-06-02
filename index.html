@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
 
-    <title>TITLE</title>
+    <title>Scala Implicits for Fun and Profit</title>
 
-    <meta name="description" content="TITLE">
-    <meta name="author" content="AUTHOR">
+    <meta name="description" content="Scala Implicits for Fun and Profit">
+    <meta name="author" content="Heiko Seeberger">
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -48,24 +48,70 @@
 <!-- ########################################################################################### -->
 
 <section data-markdown data-background="images/codecentric-title-background-16x9.png"><script type="text/template">
-## TITLE
+## Scala Implicits for Fun and Profit
 
-AUTHOR, codecentric
+Heiko Seeberger, codecentric
 </script></section>
 
 <!-- ########################################################################################### -->
 
 <section data-markdown><script type="text/template">
-### TODO
+### Does this compile?
 
-- TODO
-- TODO
+```scala
+123.reverse
+```
 </script></section>
 
 <!-- ########################################################################################### -->
 
-<section data-markdown data-background="images/codecentric-green-background-16x9.png"><script type="text/template">
-### TODO
+<section data-markdown><script type="text/template">
+### Does this compile?
+
+```scala
+"akka".reverse
+```
+</script></section>
+
+<!-- ########################################################################################### -->
+
+<section data-markdown><script type="text/template">
+### Does this compile?
+
+```scala
+Future {
+  Thread.sleep(42 * 100)
+  println("Done sleeping")
+}
+```
+</script></section>
+
+<!-- ########################################################################################### -->
+
+<section data-markdown><script type="text/template">
+### Kinds of Implicits
+
+- Implicit conversions (aka implicit views)
+- Implicit classes
+- Implicit parameters
+- Context bounds <s>and view bounds</s>
+- Class tags
+
+<small>For (incomplete and sometimes hard to digest) details see [SLS, section 7](http://www.scala-lang.org/files/archive/spec/2.11/07-implicits.html)</small>
+</script></section>
+
+<!-- ########################################################################################### -->
+
+<section data-markdown><script type="text/template">
+### Use Cases
+
+- Use implicit conversions carefully: too much magic?
+- Implicit classes are Scala's extension methods
+- Implicit parameters
+  - let you conveniently thread contextual values and
+  - are the core of Scala's type classes
+- Context bounds express a "has a" relation
+- Class tags are for wizards only
 </script></section>
 
 <!-- ########################################################################################### -->
